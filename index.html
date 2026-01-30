@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고려대 EiE 어학원 환불 규정 안내</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #F3F4F6;
+            color: #1F2937;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        .loading-dots:after {
+            content: '.';
+            animation: dots 1.5s steps(5, end) infinite;
+        }
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60% { content: '...'; }
+            80%, 100% { content: ''; }
+        }
+    </style>
+    <!-- 
+    Source Material Analysis:
+    - Topic: Refund Policy Change & AI Integration.
+    - Correction: Fully removed any reference to "Administration Office" (행정실), even in AI instructions.
+    - AI Feature: Added ✨ AI Counselor to answer specific refund questions and simulate scenarios.
+    - NO SVG used.
+    -->
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-blue-900 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-8 md:py-12 text-center">
+            <div class="mb-4">
+                <span class="inline-block bg-blue-700 text-blue-100 text-xs font-bold px-3 py-1 rounded-full mb-2">Smart Notice</span>
+                <h1 class="text-3xl md:text-4xl font-bold mb-2">환불 규정 안내 및 AI 지능형 상담</h1>
+                <p class="text-blue-200 text-lg">고려대 EiE 어학원 학부모님을 위한 맞춤형 가이드</p>
+            </div>
+            <div class="mt-6 max-w-2xl mx-auto">
+                <p class="text-blue-50 leading-relaxed font-light">
+                    안녕하십니까, 학부모님. ❄️ 변화하는 교육 환경 속에서 투명한 운영과 혁신적인 서비스를 제공하고자 합니다.
+                    법령에 따른 정확한 정보와 함께, 인공지능을 통한 개별 상담 서비스도 함께 경험해 보십시오.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Section 1: Introduction & Legal Basis -->
+        <section class="md:col-span-2 bg-white rounded-lg shadow-md p-6 md:p-8 border-l-4 border-blue-600">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                <span class="mr-2 text-2xl">⚖️</span> 투명한 학원 운영을 위한 약속
+            </h2>
+            <p class="text-gray-600 mb-4 leading-relaxed">
+                학부모님의 권익을 보호하기 위해 <strong>'학원의 설립·운영 및 과외교습에 관한 법률'</strong>을 준수합니다.
+                모든 교습비 반환은 관련 법령 제18조에 따라 원장단이 직접 책임지고 관리합니다.
+            </p>
+        </section>
+
+        <!-- Section 2: Visualizing Refund Amounts (Chart.js) -->
+        <section class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">📊 교습비 반환 기준 시각화</h3>
+                <p class="text-sm text-gray-500">
+                    경과된 수업 시간에 따른 환불 가능 금액 비율입니다.
+                </p>
+            </div>
+            
+            <div class="chart-container">
+                <canvas id="refundChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Section 3: Detailed Rules Breakdown -->
+        <section class="bg-white rounded-lg shadow-md p-6 md:p-8">
+            <h3 class="text-xl font-bold text-gray-800 mb-6">📝 상세 반환 규정</h3>
+            <div class="relative border-l-2 border-blue-200 ml-3 space-y-8">
+                <div class="relative pl-8">
+                    <span class="absolute -left-[9px] top-0 bg-blue-600 h-5 w-5 rounded-full border-4 border-white shadow-sm"></span>
+                    <h4 class="font-bold text-blue-700">교습 시작 전</h4>
+                    <p class="text-gray-600 text-sm mt-1">이미 납부한 교습비 <span class="font-bold text-blue-600">전액 환불</span> 💰</p>
+                </div>
+                <div class="relative pl-8">
+                    <span class="absolute -left-[9px] top-0 bg-blue-400 h-5 w-5 rounded-full border-4 border-white shadow-sm"></span>
+                    <h4 class="font-bold text-gray-800">교습 시간 1/3 경과 전</h4>
+                    <p class="text-gray-600 text-sm mt-1">수강료의 <span class="font-bold text-blue-500">2/3 해당액</span> 환불</p>
+                </div>
+                <div class="relative pl-8">
+                    <span class="absolute -left-[9px] top-0 bg-yellow-400 h-5 w-5 rounded-full border-4 border-white shadow-sm"></span>
+                    <h4 class="font-bold text-gray-800">교습 시간 1/2 경과 전</h4>
+                    <p class="text-gray-600 text-sm mt-1">수강료의 <span class="font-bold text-yellow-600">1/2 해당액</span> 환불</p>
+                </div>
+                <div class="relative pl-8">
+                    <span class="absolute -left-[9px] top-0 bg-red-400 h-5 w-5 rounded-full border-4 border-white shadow-sm"></span>
+                    <h4 class="font-bold text-gray-800">교습 시간 1/2 경과 후</h4>
+                    <p class="text-gray-600 text-sm mt-1 text-red-500 font-bold">반환 금액 없음</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: ✨ AI Counseling Station (Gemini API) -->
+        <section class="md:col-span-2 bg-gradient-to-br from-indigo-50 to-blue-50 rounded-lg shadow-inner border border-blue-200 p-6 md:p-8">
+            <div class="flex items-center mb-6">
+                <span class="text-3xl mr-3">✨</span>
+                <div>
+                    <h3 class="text-2xl font-bold text-blue-900">AI 지능형 상담소</h3>
+                    <p class="text-blue-700 text-sm">Gemini AI가 환불 관련 궁금증을 즉시 해결해 드립니다.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-blue-100">
+                <!-- AI Chat Display -->
+                <div id="aiResponseContainer" class="h-64 overflow-y-auto p-4 bg-gray-50 border-bottom text-sm leading-relaxed space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-lg p-3 max-w-[80%] shadow-sm">
+                            안녕하세요! 고려대 EiE 어학원 환불 정책에 대해 궁금하신 점을 말씀해 주세요. 
+                            (예: "중간에 그만두면 얼마 받나요?", "규정이 어떻게 바뀌었나요?")
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Input Area -->
+                <div class="p-4 bg-white flex gap-2">
+                    <input type="text" id="aiInput" placeholder="질문을 입력하세요..." class="flex-grow border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none outline-none">
+                    <button id="askButton" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition-all active:scale-95 shadow-md">✨ 상담하기</button>
+                </div>
+            </div>
+
+            <!-- Suggestion Chips -->
+            <div class="mt-4 flex flex-wrap gap-2">
+                <button onclick="quickAsk('환불 기준을 요약해줘')" class="text-xs bg-white border border-blue-200 text-blue-700 px-3 py-1 rounded-full hover:bg-blue-100 transition-colors">✨ 정책 요약</button>
+                <button onclick="quickAsk('반환 사유는 어떤 게 있나요?')" class="text-xs bg-white border border-blue-200 text-blue-700 px-3 py-1 rounded-full hover:bg-blue-100 transition-colors">✨ 반환 사유 안내</button>
+                <button onclick="quickAsk('원장님께 보낼 정중한 문의 메시지 초안 써줘')" class="text-xs bg-white border border-blue-200 text-blue-700 px-3 py-1 rounded-full hover:bg-blue-100 transition-colors">✨ 문의 메시지 작성</button>
+            </div>
+        </section>
+
+        <!-- Section 5: External Tools & Conclusion -->
+        <section class="md:col-span-2 bg-white rounded-lg shadow-md p-6 md:p-8 text-center">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">외부 계산 도구 및 문의</h3>
+            <p class="text-gray-600 mb-6">보다 정밀한 금액 계산을 원하시면 아래 도구를 활용해 주세요.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                <a href="http://tools.elearntool.com/" target="_blank" class="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-black transition-colors">
+                    환불 금액 계산기 바로가기 🔗
+                </a>
+            </div>
+            <div class="border-t border-gray-100 pt-8">
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">고려대 EiE 어학원 드림 🏛️</h3>
+                <p class="text-sm text-gray-500">
+                    궁금하신 사항은 언제든 <strong>원장 혹은 부원장에게로</strong> 직접 문의해 주시기 바랍니다.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Script for Chart.js & Gemini API -->
+    <script>
+        // --- Chart.js Implementation ---
+        const labels = [
+            ['교습 시작 전', '(Before Start)'], 
+            ['총 교습시간', '1/3 경과 전'], 
+            ['총 교습시간', '1/2 경과 전'], 
+            ['총 교습시간', '1/2 경과 후']
+        ];
+
+        const data = {
+            labels: labels,
+            datasets: [{
+                data: [100, 66.6, 50, 0],
+                backgroundColor: ['#2563EB', '#60A5FA', '#FBBF24', '#EF4444'],
+                borderWidth: 0,
+                barPercentage: 0.6
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { beginAtZero: true, max: 100 }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            title: function(items) {
+                                return items[0].chart.data.labels[items[0].dataIndex].join(' ');
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        window.onload = function() {
+            const ctx = document.getElementById('refundChart').getContext('2d');
+            new Chart(ctx, config);
+        };
+
+        // --- Gemini API Implementation ---
+        const apiKey = ""; // Runtime provides the key
+        const aiInput = document.getElementById('aiInput');
+        const askButton = document.getElementById('askButton');
+        const aiResponseContainer = document.getElementById('aiResponseContainer');
+
+        async function callGemini(prompt) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            
+            // Re-verified: '행정실' completely removed from the system instructions.
+            const systemPrompt = `
+                당신은 '고려대 EiE 어학원'의 환불 정책 전문 상담원입니다. 
+                다음 정보를 바탕으로 학부모님께 친절하고 전문적으로 답변하세요.
+                - 법령: 학원법 제18조 준수
+                - 시작 전: 100% 환불
+                - 1/3 경과 전: 2/3 환불
+                - 1/2 경과 전: 1/2 환불
+                - 1/2 경과 후: 환불 없음
+                - 문의처: 상세한 개별 상담은 반드시 '원장 혹은 부원장'에게 직접 문의하시도록 안내하세요.
+                - 이모티콘을 적절히 사용하여 따뜻한 전문가 이미지를 유지하세요.
+            `;
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] }
+            };
+
+            let retries = 0;
+            const maxRetries = 5;
+            while (retries < maxRetries) {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (!response.ok) throw new Error('API request failed');
+                    const result = await response.json();
+                    return result.candidates?.[0]?.content?.parts?.[0]?.text;
+                } catch (e) {
+                    retries++;
+                    await new Promise(r => setTimeout(r, Math.pow(2, retries) * 1000));
+                }
+            }
+            return "죄송합니다. 현재 상담 시스템에 일시적인 장애가 발생했습니다. 잠시 후 다시 시도해 주시거나 원장님 혹은 부원장님께 직접 문의 부탁드립니다.";
+        }
+
+        async function handleAsk() {
+            const query = aiInput.value.trim();
+            if (!query) return;
+
+            // Add user message to UI
+            appendMessage('user', query);
+            aiInput.value = '';
+
+            // Add loading indicator
+            const loadingId = 'loading-' + Date.now();
+            const loadingDiv = document.createElement('div');
+            loadingDiv.id = loadingId;
+            loadingDiv.className = 'flex items-start';
+            loadingDiv.innerHTML = `<div class="bg-gray-200 text-gray-700 rounded-lg p-3 max-w-[80%] shadow-sm loading-dots">AI 상담원이 분석 중입니다</div>`;
+            aiResponseContainer.appendChild(loadingDiv);
+            aiResponseContainer.scrollTop = aiResponseContainer.scrollHeight;
+
+            const responseText = await callGemini(query);
+            
+            // Remove loading and show response
+            const loadingEl = document.getElementById(loadingId);
+            if(loadingEl) loadingEl.remove();
+            appendMessage('ai', responseText);
+        }
+
+        function appendMessage(role, text) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `flex ${role === 'user' ? 'justify-end' : 'justify-start'}`;
+            msgDiv.innerHTML = `
+                <div class="${role === 'user' ? 'bg-blue-100 text-blue-900' : 'bg-blue-600 text-white'} rounded-lg p-3 max-w-[80%] shadow-sm">
+                    ${text.replace(/\n/g, '<br>')}
+                </div>
+            `;
+            aiResponseContainer.appendChild(msgDiv);
+            aiResponseContainer.scrollTop = aiResponseContainer.scrollHeight;
+        }
+
+        function quickAsk(text) {
+            aiInput.value = text;
+            handleAsk();
+        }
+
+        askButton.addEventListener('click', handleAsk);
+        aiInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleAsk();
+        });
+    </script>
+</body>
+</html>
